@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn AutoConnect Extension",
+    "version": "1.0.0",
+    "author": "bhavaniganti2489@gmail.com",
+    "description": "send connection requests to a list of people in a LinkedIn search.",
+    
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://www.linkedin.com/search/results/people/*/*"
+    ],
+    "icons": {
+        "64": "linkedin64.png",
+        "96": "linkedin96.png",
+        "128": "linkedin128.png"
+    },
+    "action": {
+        "default_icon":"linkedin64.png",
+        "default_title": "LinkedIn AutoConnect ",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.linkedin.com/search/results/people/*"],
+          "js": ["background.js"]
+        }
+      ]
+}
